@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="theButton"> Hey click me </button>
+    <script>
+        $(document).ready(
+            function(){
+                $("#theButton").click(function(){
+                    $.get("https://api.github.com/users/Stefany-Olivera", displayid)
+                    function displayid(data){
+                        if(data.id){
+                            $('body').append("<p>"+data.id+"</p>");
+                        }
+                    };
+                });
+            })
+        </script>
+        
+    
+    
+</body>
+</html>
